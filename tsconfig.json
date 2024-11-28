@@ -1,34 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": false,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "experimentalDecorators": true,
-    "strictPropertyInitialization": false,
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "target": "ES2020",                    // Set the target JavaScript version
+    "module": "CommonJS",                 // Use CommonJS module system for Node.js
+    "strict": true,                       // Enable strict type-checking options
+    "esModuleInterop": true,              // Enable interop between CommonJS and ES modules
+    "resolveJsonModule": true,            // Enable importing JSON files
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in file names
+    "skipLibCheck": true,                 // Skip type checking of declaration files
+    "outDir": "./dist",                   // Output directory for compiled files
+    "rootDir": "./",                      // Root directory of the source files
+    "moduleResolution": "node",          // Use Node module resolution strategy
+    "types": ["node"]                     // Include type definitions for Node.js
   },
-  "exclude": [
-    "node_modules",
-    "cdk.out"
-  ],
   "include": [
-    "shared/*.json"
+    "lambda/**/*.ts",                    // Include all TypeScript files in the 'lambda' folder
+    "lib/**/*.ts",                       // Include all TypeScript files in the 'lib' folder
+    "shared/**/*.ts",                    // Include all TypeScript files in the 'shared' folder
+    "shared/*.json"                      // Include shared JSON files
   ],
+  "exclude": [
+    "node_modules",                      // Exclude 'node_modules' directory
+    "cdk.out",                           // Exclude CDK output directory
+    "dist"                               // Exclude output directory
+  ]
 }
